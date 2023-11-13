@@ -3,7 +3,6 @@
 /**
  * _printf - funtions to print
  * @format: format string
- * @fmt_is_valid: - checking if its a valid format
  * Return: 0 success
  */
 int _printf(const char *format, ...)
