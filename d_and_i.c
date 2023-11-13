@@ -8,25 +8,29 @@
 int wint(int a, int c)
 {
 	char b;
+
+	
+	long int num = a;
+
 	/*if a is negative, print - and make a positive*/
-	if (a < 0)
+	if (num < 0)
 	{
 		b = '-';
 		c += write(1, &b, 1);
-		a = -a;
+		num = -num;
 	}
 	/*base condition*/
-	if (a % 10 == a)
+	if (num % 10 == num)
 	{
-		b = a + '0';
+		b = num + '0';
 		c += write(1, &b, 1);
-		return (c);
+		return c;
 	}
 	/*recursive call*/
-	c = wint(a / 10, c);
-	b = (a % 10) + '0';
+	c = wint(num / 10, c);
+	b = (num % 10) + '0';
 	c += write(1, &b, 1);
-	return (c);
+	return c;
 }
 
 /**
