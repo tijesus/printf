@@ -10,7 +10,7 @@ int per_print(va_list char_arg)
 
 	(void)char_arg;
 /*	p = va_arg(char_arg, int);*/
-    p = '%';
+	p = '%';
 	write(1, &p, 1);
 	return (1);
 }

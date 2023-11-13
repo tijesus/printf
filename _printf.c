@@ -1,15 +1,20 @@
 #include "main.h"
 
+/**
+ * _printf - funtions to print
+ * @format: format string
+ * @fmt_is_valid: - checking if its a valid format
+ * Return: 0 success
+ */
 int _printf(const char *format, ...)
 {
-	unsigned int i, sum_char = 0, found = 0;
-
-	check fmat[] = {
-		{"%c", char_print}, {"%s", str_print}, {"%%", per_print},
-	};
+	unsigned int i, sum_char = 0, found;
 	va_list list_arg;
 
-	if (format == NULL)
+	check fmat[] = {
+		{"c", char_print}, {"s", str_print}, {"%", per_print}, {"d", dec_print},
+		{"i", dec_print}};
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(list_arg, format);
 	while (*format)
@@ -18,15 +23,14 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			sum_char++;
-		}
-		else
+		} else
 		{
 			format++;
 			if (*format == '\0')
 				break;
-			for (i = 0; i < sizeof(fmat) / sizeof(fmat[0]); i++)
+			for (found = 0, i = 0; i < sizeof(fmat) / sizeof(fmat[0]); i++)
 			{
-				if (strcmp(fmat[i].lett, format) == 0)
+				if (*format == *(fmat[i].lett))
 				{
 					sum_char += fmat[i].func(list_arg);
 					found = 1;
@@ -35,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			if (!found)
 			{
-				write(1, format - 1, 1);
+				write(1, --format, 1);
 				sum_char++;
 			}
 		}

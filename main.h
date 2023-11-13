@@ -4,22 +4,24 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
-/** format - format sturct
+#define ZERO 0
+
+/**
+ * struct format - format sturct
  * @lett: format iddentifier
  * @func: functions pointer
  */
-
 typedef struct format
 {
 	char *lett;
 	int (*func)(va_list);
-}check;
+} check;
 
 int _printf(const char *format, ...);
 int char_print(va_list char_arg);
 int str_print(va_list char_arg);
 int per_print(va_list char_arg);
-
-
-#endif
+int dec_print(va_list char_arg);
+#endif /*_MAIN_H*/
