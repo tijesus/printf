@@ -1,20 +1,6 @@
 #include "main.h"
 
 /**
- * _strlen - helper function
- * @s: character pointer;
- * Return: length of the string
- */
-int _strlen(char *s)
-{
-	int size;
-
-	for (size = 0; s[size] != '\0'; size++)
-		continue;
-	return (size);
-}
-
-/**
  * str_print - print character
  * @char_arg: name given to variadic list
  * Return: length of the string
