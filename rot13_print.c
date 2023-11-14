@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * *rot13 - rot13 encoding
- * @a: pointer parameter
+ * rot13_print - rot13 encoding
+ * @char_arg: pointer parameter
  * Return: char
  */
 int rot13_print(va_list char_arg)

@@ -7,6 +7,8 @@
 
 #define ZERO 0
 #define BINARY 2
+#define HEX 16
+#define OCTAL 8
 
 /**
  * struct format - format sturct
@@ -30,5 +32,9 @@ int x_print(const char *fmt, check *fmat, va_list list, unsigned long size);
 int srev_print(va_list char_arg);
 int _strlen(char *s);
 int rot13_print(va_list char_arg);
+int xx_print(va_list list_arg);
+int xxx_print(va_list list_arg);
+int u_print(va_list list_arg);
+int o_print(va_list list_arg);
 
 #endif /*_MAIN_H*/
