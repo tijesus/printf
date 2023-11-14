@@ -15,28 +15,18 @@ int _strlen(char *s)
 
 /**
  * str_print - print character
- * @char_arg: name given to variadic list
- * Return: length of the string
- */
+ * @char_arg: name given to varadic list
+ * Return: 0 success
+*/
 int str_print(va_list char_arg)
 {
 	char *str;
-	int i, len = 0;
 
 	str = va_arg(char_arg, char *);
-	if (str == NULL)
-	{
-		str = "(null)";
-		len = _strlen(str);
-		for (i = 0; i < len; i++)
-			 write(1, str, strlen(str));
-		return (len);
-	}
-	else
-	{
-		len = _strlen(str);
-		for (i = 0; i < len; i++)
-			 write(1, str, strlen(str));
-		return (len);
-	}
+    if (str != NULL)
+    {
+        write(1, str, _strlen(str));
+        return (_strlen(str));
+    }
+	return (0);
 }
