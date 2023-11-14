@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 
 	check fmat[] = {
 		{"c", char_print}, {"s", str_print}, {"%", per_print}, {"d", dec_print},
-		{"i", dec_print}, {"b", u_to_b}
+		{"i", dec_print}, {"b", u_to_b}, {"r", srev_print}
 		};
 
 	unsigned long size = sizeof(fmat) / sizeof(fmat[0]);
