@@ -29,5 +29,6 @@ int wint(int a, int c);
 int x_print(const char *fmt, check *fmat, va_list list, unsigned long size);
 int srev_print(va_list char_arg);
 int _strlen(char *s);
+int rot13_print(va_list char_arg);
 
 #endif /*_MAIN_H*/
