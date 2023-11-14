@@ -23,10 +23,10 @@ int str_print(va_list char_arg)
 	char *str;
 
 	str = va_arg(char_arg, char *);
-    if (str != NULL)
-    {
-        write(1, str, _strlen(str));
-        return (_strlen(str));
-    }
+	if (str != NULL)
+	{
+		write(1, str, _strlen(str));
+		return (_strlen(str));
+	}
 	return (0);
 }
